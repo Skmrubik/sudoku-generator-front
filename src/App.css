@@ -1,0 +1,28 @@
+.number-list{
+  display: flex;
+}
+
+.number-button{
+  margin: 5px;
+  font-size: 25px;
+  border: none;
+  width: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.sudoku-casilla{
+  border-radius: 0px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  cursor: pointer;
+}
+
+.sudoku-casilla-activa{
+  border-radius: 0px;
+  height: 35px;
+  width: 35px;
+  border: none;
+  cursor: pointer;
+  background-color: grey;
+}
