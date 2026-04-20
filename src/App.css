@@ -26,3 +26,8 @@
   cursor: pointer;
   background-color: grey;
 }
+
+.fila{
+  display: flex;
+  height: 35px;
+}

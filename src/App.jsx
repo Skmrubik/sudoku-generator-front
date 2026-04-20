@@ -11,15 +11,15 @@ function App() {
   const [casillaActiva, setCasillaActiva] = useState(false);
   const arrayNum = [1,2,3,4,5,6,7,8,9]
   const [sudoku, setSudoku]= useState([
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0],
-    [0,0,0,0,0,0,0,0,0]
+    [' ',' ',' ','','','','','',''],
+    ['','','','','','','','',''],
+    ['','','','','','','','',''],
+    ['','','','','','','','',''],
+    ['','','','','','','','',''],
+    ['','','','','','','','',''],
+    ['','','','','','','','',''],
+    ['','','','','','','','',''],
+    ['','','','','','','','','']
   ])
  
 
@@ -34,13 +34,13 @@ function App() {
 
   function rellenarNum(num){
     let sudokuAux = [...sudoku];
-    sudokuAux[filaActiva][colActiva]= num;
+    sudokuAux[filaActiva][colActiva]= num.toString();
     setSudoku(sudokuAux);
     const idCasilla = filaActiva.toString()+colActiva.toString();
     const casillaActiva = document.getElementById(idCasilla);
-    console.log(casillaActiva);
     casillaActiva.classList.remove('sudoku-casilla-activa');
     casillaActiva.classList.add('sudoku-casilla');
+    console.log(sudoku)
   }
   return (
     <>
@@ -56,7 +56,7 @@ function App() {
       <div>
         {sudoku.map((fila, indexFila) => {
           return(
-            <div>
+            <div className='fila'>
               {fila.map((numFila,indexCol) => {
                 return(
                   <button className='sudoku-casilla' id={indexFila.toString()+indexCol.toString()} onClick={()=> activarCasilla(indexFila, indexCol)}>
